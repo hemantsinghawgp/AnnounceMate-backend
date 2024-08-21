@@ -9,7 +9,9 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://announcemate.vercel.app/' // Replace with your Vercel URL
+}));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
